@@ -1,0 +1,5 @@
+*__pycache__*
+slurm*out
+*.o*
+*.e*
+./local/*
