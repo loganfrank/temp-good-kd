@@ -1,0 +1,49 @@
+{
+    "path": "./data/",
+    "name": "testing_script",
+
+    "device": "cuda:0",
+    "seed": "12345",
+
+    "wandb_mode": "disabled",
+    "wandb_entity": "loganfrank-dissertation",
+    "wandb_project": "student-initialization",
+    "wandb_tags": null,
+
+    "distillation_dataset" : "cifar10",
+    "test_dataset" : "cifar10",
+    "pin_memory": true,
+    "num_workers": 4,
+
+    "augmentations": {
+        "train": ["randomcrop", "randaug", "colorjitter", "hflip", "padcrop"],
+        "test": [],
+        "mixup": [1.0, 1.0]
+    },
+
+    "teacher": "resnet50",
+    "student": "resnet18",
+
+    "boundary_attack": {
+        "name": "None"
+    },
+
+    "deeper_attack": {
+        "name": "None"
+    },
+
+    "training": {
+        "batch_size": 256,
+        "num_epochs": 400,
+        "gradient_clip": null,
+        "loss": {
+            "temperature": 5
+        },
+        "optimizer": {
+            "name": "sgd",
+            "lr": 0.1,
+            "momentum": 0.9,
+            "weight_decay": 1e-4
+        }
+    }
+}
